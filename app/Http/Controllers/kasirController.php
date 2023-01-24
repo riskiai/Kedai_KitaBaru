@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\DB;
 use App\kasir;
 use PDF;
 
-class kasirController extends Controller
+class KasirController extends Controller
 {
 
     private function _validation(Request $request)
