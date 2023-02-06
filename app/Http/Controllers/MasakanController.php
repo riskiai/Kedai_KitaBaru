@@ -35,7 +35,7 @@ class MasakanController extends Controller
     {
         $data_masakan = DB::table('tbl_masakan')
         ->where('nama_kategori','minuman')
-        ->paginate(25);
+        ->paginate(45);
     	return view('admin/masakan.minuman', ['data_masakan' => $data_masakan]);
     }
 
