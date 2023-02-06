@@ -62,7 +62,7 @@ class AdminController extends Controller
 
     public function delete($id)
     {
-    	admin::where('id_admin',$id)->delete();
+    	Admin::where('id_admin',$id)->delete();
 
         return redirect()->back()->with('message','Data berhasil dihapus');
 	}
