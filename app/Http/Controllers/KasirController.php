@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use App\kasir;
+use App\Kasir;
 use PDF;
 
 class KasirController extends Controller
@@ -36,7 +36,7 @@ class KasirController extends Controller
 
     public function index(Request $request)
     {
-        $data = kasir::where('tbl_kasir.nama_kasir', 'like', "%{$request->keyword}%")->paginate(5)->onEachSide(0);;
+        $data = Kasir::where('tbl_kasir.nama_kasir', 'like', "%{$request->keyword}%")->paginate(5)->onEachSide(0);;
 
         return view('admin/kasir.index', (['data' => $data]));
     }
@@ -49,7 +49,7 @@ class KasirController extends Controller
     public function prosescreate(Request $request)
     {
         $this->_validation($request);
-        kasir::create([
+        Kasir::create([
             'nama_kasir' => $request->namakasir,
             'jenis_kelamin' => $request->jk,
             'alamat' => $request->alamat,
@@ -63,14 +63,14 @@ class KasirController extends Controller
 
     public function edit($id)
     {
-        $data = kasir::where('id_kasir', $id)->first();
+        $data = Kasir::where('id_kasir', $id)->first();
         return view('admin/kasir.edit', (['data' => $data]));
     }
 
     public function prosesedit(Request $request, $id)
     {
         $this->_validation($request);
-        kasir::where('id_kasir', $id)->update([
+        Kasir::where('id_kasir', $id)->update([
             'nama_kasir' => $request->namakasir,
             'jenis_kelamin' => $request->jk,
             'alamat' => $request->alamat,
@@ -84,7 +84,7 @@ class KasirController extends Controller
 
     public function delete($id)
     {
-        kasir::where('id_kasir', $id)->delete();
+        Kasir::where('id_kasir', $id)->delete();
 
         return redirect()->back()->with('message', 'Data berhasil dihapus');
     }
