@@ -25,7 +25,7 @@ class AdminController extends Controller
 	}
 
     public function index(Request $request){
-    	$data_admin = admin::where('tbl_admin.nama_admin','like',"%{$request->keyword}%")->paginate(5)->onEachSide(0);;
+    	$data_admin = Admin::where('tbl_admin.nama_admin','like',"%{$request->keyword}%")->paginate(5)->onEachSide(0);;
     	return view('admin/admin.index', ['data_admin' => $data_admin]);
     }
 
@@ -42,7 +42,7 @@ class AdminController extends Controller
     	    'remember_token'=>\Str::random(40)
     	]);
 
-    	return redirect()->route('admin')->with('store','Berhasil disimpan!');
+    	return redirect()->route('Admin')->with('store','Berhasil disimpan!');
     }
 
     public function edit($id){
