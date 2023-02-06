@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use App\pelanggan;
+use App\Pelanggan;
 use Auth;
 use Carbon\Carbon;
 use App\Masakan;
