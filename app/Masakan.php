@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class masakan extends Model
+class Masakan extends Model
 {
     public $timestamps = false;
     protected $table = 'tbl_masakan';
