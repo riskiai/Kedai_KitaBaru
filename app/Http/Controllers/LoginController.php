@@ -33,14 +33,14 @@ class LoginController extends Controller
     	// return redirect('/login')->with('message','Data atau password salah');
         // Attempt to log the user in
               // Passwordnya pake bcrypt
-            if (Auth::guard('Admin')->attempt(['username' => $request->username, 'password' => $request->password])) {
+            if (Auth::guard('admin')->attempt(['username' => $request->username, 'password' => $request->password])) {
                     // if successful, then redirect to their intended location
                   return redirect()->intended('/dashboard');
-                } else if (Auth::guard('Kasir')->attempt(['username' => $request->username, 'password' => $request->password])) {
+                } else if (Auth::guard('kasir')->attempt(['username' => $request->username, 'password' => $request->password])) {
                   return redirect()->intended('/kasir');
-                } else if (Auth::guard('Waiter')->attempt(['username' => $request->username, 'password' => $request->password])) {
+                } else if (Auth::guard('waiter')->attempt(['username' => $request->username, 'password' => $request->password])) {
                   return redirect()->intended('/waiter');
-                } else if (Auth::guard('Owner')->attempt(['username' => $request->username, 'password' => $request->password])) {
+                } else if (Auth::guard('owner')->attempt(['username' => $request->username, 'password' => $request->password])) {
                   return redirect()->intended('/owner');
                 } else {
                 return redirect('/login')->with('message','username atau password salah');
