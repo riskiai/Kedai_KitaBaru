@@ -43,5 +43,5 @@ Riski Ahmad Ilham, No Telfon : 0895341206291
 3. Debi Nabilah Sholihah (2103037) 
 
 #DOKUMENTASI WEBSITE
-<img src="{{asset('assets/img/produk/sushi.png')}}"
+
 
