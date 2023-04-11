@@ -16,7 +16,7 @@
 			<button class="dropbtn " style="color:#47c363;" ><i class="fas fa-bars btn-success" ></i></button>
 			<div class="dropup-content">
 			  <a href="/feedback" style="color: #47c363;"><i class="ion ion-chatbox text-success" ></i> Feedback</a>
-			  <a href="{{ Route('pelanggan.logout') }}" style="color: #47c363;"><i class="ion ion-android-exit text-success"></i> logout</a>
+			  <a href="{{ Route('pelanggan.logout') }}" style="color: #47c363;"><i class="ion ion-android-exit text-success"></i> logoutt </a>
 			</div>
 		  </div>
 	</div>
