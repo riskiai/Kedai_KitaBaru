@@ -34,9 +34,6 @@ Laravel Version : 8.0 PHP Version : ^7.2.5|^8.0  MySQL Version : 3.3.0
 2. Kasir username : debi password : debi123
 3. Waiter username : adit password : adit123 
 
-#PENANGGUNG JAWAB
-Riski Ahmad Ilham, No Telfon : 0895341206291
-
 #ANGGOTA KELOMPOK 
 1. Riski Ahmad Ilham     (2103055)  
 2. Aditya Hadi Wijaya    (2103032)
