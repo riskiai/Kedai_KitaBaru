@@ -43,9 +43,8 @@ Riski Ahmad Ilham, No Telfon : 0895341206291
 3. Debi Nabilah Sholihah (2103037) 
 
 #DOKUMENTASI WEBSITE
-<<<<<<< HEAD
-=======
-![alt text](https://github.com/riskiai/Kedai_KitaBaru/blob/main/public/assets/img/3.jpg?raw=true)
->>>>>>> 31e2964cfb749811b2f64ec8dc296d2a6170c3ea
+1. Login Pengunjung
+![alt text](https://github.com/riskiai/Kedai_KitaBaru/blob/main/public/assets/img/login_pengunjung.png?raw=true)
+
 
 
