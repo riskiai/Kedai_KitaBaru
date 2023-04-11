@@ -44,9 +44,7 @@ Riski Ahmad Ilham, No Telfon : 0895341206291
 
 #DOKUMENTASI WEBSITE
 1. Login Pengunjung
-<<<<<<< HEAD
-=======
 ![alt text](https://github.com/riskiai/Kedai_KitaBaru/blob/main/public/assets/img/login_pengunjung.png?raw=true)
->>>>>>> 31e2964cfb749811b2f64ec8dc296d2a6170c3ea
+
 
 
