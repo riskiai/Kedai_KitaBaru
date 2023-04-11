@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 12, 2022 at 09:38 AM
--- Server version: 10.4.24-MariaDB
--- PHP Version: 8.0.19
+-- Generation Time: Apr 11, 2023 at 05:53 AM
+-- Server version: 10.4.27-MariaDB
+-- PHP Version: 8.0.25
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -35,7 +35,7 @@ CREATE TABLE `tbl_admin` (
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `remember_token` varchar(100) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `tbl_admin`
@@ -56,7 +56,7 @@ CREATE TABLE `tbl_feedback` (
   `id_feedback` int(11) NOT NULL,
   `isi` text NOT NULL,
   `tanggal` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `tbl_feedback`
@@ -85,7 +85,7 @@ CREATE TABLE `tbl_kasir` (
   `password` varchar(191) NOT NULL,
   `updated_at` date NOT NULL,
   `created_at` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `tbl_kasir`
@@ -107,7 +107,7 @@ CREATE TABLE `tbl_masakan` (
   `nama_kategori` varchar(30) NOT NULL,
   `harga` int(11) NOT NULL,
   `status` varchar(30) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `tbl_masakan`
@@ -157,7 +157,7 @@ CREATE TABLE `tbl_order` (
   `status_order2` varchar(30) NOT NULL,
   `jumlah` int(11) NOT NULL,
   `sub_total` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `tbl_order`
@@ -240,7 +240,7 @@ INSERT INTO `tbl_order` (`id_order`, `masakan_id`, `order_detail_id`, `user_orde
 CREATE TABLE `tbl_order_detail` (
   `id_order_detail` int(11) NOT NULL,
   `order_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `tbl_order_detail`
@@ -474,7 +474,7 @@ CREATE TABLE `tbl_owner` (
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `remember_token` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `tbl_owner`
@@ -498,7 +498,7 @@ CREATE TABLE `tbl_pelanggan` (
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `remember_token` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `tbl_pelanggan`
@@ -543,7 +543,8 @@ INSERT INTO `tbl_pelanggan` (`id_pelanggan`, `kode`, `nama_pelanggan`, `no_meja`
 (287, 'plg35', 'wiliam', 4, '$2y$10$HTt4Y1Q77M2kcJn5UWc5/.iByCscikiOddBVuQf1aRsvJU9CpB0fO', '2022-12-12 00:27:56', '2022-12-12 00:27:56', 'I2KDkofYxJFzkCjVOoSL2gpHnB80DXr22SL4L9TMg8RcDTgRzLA08NPaSJ6R'),
 (288, 'plg36', 'rizky', 4, '$2y$10$Qq71PRpc/8QERBqHnmzh9O7CgvvWnJUDmRIe6ibKofuZFyLtenKUu', '2022-12-12 01:13:52', '2022-12-12 01:13:52', 'v5qdni0gq4mJ052NsrsswjQuqF7EY7MTxqPna7YpHy77hv8ZTAJpEURJvF4P'),
 (289, 'plg37', 'rifai', 7, '$2y$10$64MkaAr7lEUhbgyMKP0IaecnU4xaGSNDUs/881ebm7bvZ1Q9HDIWC', '2022-12-12 01:14:26', '2022-12-12 01:14:26', 'ebYxPIKoZu9y1bVUumryiHugG4CHUmL1pmwwoC4NgD4A1oR33PZZV2OMu0UP'),
-(290, 'plg38', 'selvi', 4, '$2y$10$FqO9gubofWaw4fiH9DnPI.BVV5SFhHVajuxXxfbCMY7GUxd6Uf0NW', '2022-12-12 01:31:40', '2022-12-12 01:31:40', '5b8y9pPaRbJQpbaKFtn9JmnT8J9vbNbxcy7AGCxe9Fk8p1OA4h5rNhI4MMEN');
+(290, 'plg38', 'selvi', 4, '$2y$10$FqO9gubofWaw4fiH9DnPI.BVV5SFhHVajuxXxfbCMY7GUxd6Uf0NW', '2022-12-12 01:31:40', '2022-12-12 01:31:40', '5b8y9pPaRbJQpbaKFtn9JmnT8J9vbNbxcy7AGCxe9Fk8p1OA4h5rNhI4MMEN'),
+(291, 'plg39', 'riski', 3, '$2y$10$nA2QIqH/KHvcsio4KhlmqejXID7LsY9TzOYYE4.s6QqRM87ulyZYu', '2023-04-10 20:53:08', '2023-04-10 20:53:08', 'sVGHoX4B4UhqO0pT5Uzqz9Gr2gKrMnghir0wFOyDUAq4M1Ztnh6ltbL92TjB');
 
 -- --------------------------------------------------------
 
@@ -561,7 +562,7 @@ CREATE TABLE `tbl_transaksi` (
   `user_transaksi_id` int(11) NOT NULL,
   `status_order` varchar(50) NOT NULL,
   `diantar` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `tbl_transaksi`
@@ -612,7 +613,7 @@ CREATE TABLE `tbl_waiter` (
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `remember_token` varchar(100) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `tbl_waiter`
@@ -727,7 +728,7 @@ ALTER TABLE `tbl_owner`
 -- AUTO_INCREMENT for table `tbl_pelanggan`
 --
 ALTER TABLE `tbl_pelanggan`
-  MODIFY `id_pelanggan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=291;
+  MODIFY `id_pelanggan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=292;
 
 --
 -- AUTO_INCREMENT for table `tbl_waiter`
