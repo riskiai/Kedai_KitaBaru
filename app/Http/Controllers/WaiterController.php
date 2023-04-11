@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use App\waiter;
+use App\Waiter;
 use PDF;
 
 class WaiterController extends Controller
@@ -30,7 +30,7 @@ class WaiterController extends Controller
 	    ]);
 	}
     public function index(Request $request){
-        $data = waiter::where('tbl_waiter.nama_waiter','like',"%{$request->keyword}%")->paginate(5)->onEachSide(0);;
+        $data = Waiter::where('tbl_waiter.nama_waiter','like',"%{$request->keyword}%")->paginate(5)->onEachSide(0);;
     	return view('admin/waiter.index',(['data' => $data]));
     }
 
@@ -40,7 +40,7 @@ class WaiterController extends Controller
 
     public function prosescreate(Request $request){
         $this->_validation($request);
-    	waiter::create([
+    	Waiter::create([
             'nama_waiter' => $request->namawaiter,
             'jenis_kelamin' => $request->jk,
             'alamat' => $request->alamat,
@@ -53,13 +53,13 @@ class WaiterController extends Controller
     }
 
     public function edit($id){
-        $data = waiter::where('id_waiter',$id)->first();
+        $data = Waiter::where('id_waiter',$id)->first();
     	return view('admin/waiter.edit',(['data' => $data]));
     }
 
     public function prosesedit(Request $request,$id){
         $this->_validation($request);
-        $data = waiter::where('id_waiter',$id)->update([
+        $data = Waiter::where('id_waiter',$id)->update([
             'nama_waiter' => $request->namawaiter,
             'jenis_kelamin' => $request->jk,
             'alamat' => $request->alamat,
@@ -73,7 +73,7 @@ class WaiterController extends Controller
 
     public function delete($id)
     {
-    	waiter::where('id_waiter',$id)->delete();
+    	Waiter::where('id_waiter',$id)->delete();
 
         return redirect()->back()->with('message','Data berhasil dihapus');
     }

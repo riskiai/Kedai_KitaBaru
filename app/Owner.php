@@ -6,7 +6,7 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class kasir extends Authenticatable
+class Owner extends Authenticatable
 {
     use Notifiable;
 
@@ -16,13 +16,13 @@ class kasir extends Authenticatable
      * @var array
      */
 
-    protected $table = 'tbl_kasir';
+    protected $table = "tbl_owner";
 
-    protected $primaryKey = 'id_kasir';
+    protected $primaryKey = "id_owner";
 
     protected $fillable = [
-        'nama_kasir','jenis_kelamin','alamat','no_hp','email','username','password',
-        ];
+        'nama_owner', 'username', 'password',
+    ];
 
     /**
      * The attributes that should be hidden for arrays.
@@ -30,6 +30,6 @@ class kasir extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password',    
+        'password', 'remember_token',
     ];
 }

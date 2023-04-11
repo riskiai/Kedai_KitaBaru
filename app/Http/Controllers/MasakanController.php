@@ -27,7 +27,7 @@ class MasakanController extends Controller
     {
         $data_masakan = DB::table('tbl_masakan')
         ->where('nama_kategori','makanan')
-        ->paginate(5);
+        ->paginate(25);
     	return view('admin/masakan.index', ['data_masakan' => $data_masakan]);
     }
 
@@ -35,7 +35,7 @@ class MasakanController extends Controller
     {
         $data_masakan = DB::table('tbl_masakan')
         ->where('nama_kategori','minuman')
-        ->paginate(5);
+        ->paginate(45);
     	return view('admin/masakan.minuman', ['data_masakan' => $data_masakan]);
     }
 
@@ -43,7 +43,7 @@ class MasakanController extends Controller
     {
         $data_masakan = DB::table('tbl_masakan')
         ->where('nama_kategori','dessert')
-        ->paginate(5);
+        ->paginate(25);
     	return view('admin/masakan.dessert', ['data_masakan' => $data_masakan]);
     }
 
@@ -97,7 +97,7 @@ class MasakanController extends Controller
 
     public function edit($id)
     {
-        $data = masakan::where('id_masakan',$id)->first();
+        $data = Masakan::where('id_masakan',$id)->first();
     	return view('admin/masakan.edit',(['data' => $data]));
     }
 
@@ -144,16 +144,16 @@ class MasakanController extends Controller
 
     public function delete($id)
     {
-        masakan::where('id_masakan',$id)->delete();
+        Masakan::where('id_masakan',$id)->delete();
         return redirect()->back()->with('message','Data berhasil dihapus');
     }
 
     public function updatestatus(Request $request, $id)
     {
         if ($request->status == 'tersedia') {
-            masakan::where('id_masakan',$id)->update(['status'=>'tersedia']);
+            Masakan::where('id_masakan',$id)->update(['status'=>'tersedia']);
         } else {
-            masakan::where('id_masakan',$id)->update(['status'=>'habis']);
+            Masakan::where('id_masakan',$id)->update(['status'=>'habis']);
         }
 
         return redirect()->back()->with('message','Data berhasil diubah');

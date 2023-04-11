@@ -133,27 +133,27 @@ return [
 
         'admin' => [
           'driver' => 'eloquent',
-          'model' => App\admin::class,
+          'model' => App\Admin::class,
         ],
 
         'pelanggan' => [
           'driver' => 'eloquent',
-          'model' => App\pelanggan::class,
+          'model' => App\Pelanggan::class,
         ],
 
         'kasir' => [
           'driver' => 'eloquent',
-          'model' => App\kasir::class,
+          'model' => App\Kasir::class,
         ],
 
         'waiter' => [
           'driver' => 'eloquent',
-          'model' => App\waiter::class,
+          'model' => App\Waiter::class,
         ],
 
         'owner' => [
           'driver' => 'eloquent',
-          'model' => App\owner::class,
+          'model' => App\Owner::class,
         ],
     ],
 

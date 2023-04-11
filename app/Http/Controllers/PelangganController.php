@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\pelanggan;
+use App\Pelanggan;
 use Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\DB;
@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\DB;
 class PelangganController extends Controller
 {
     public function index(Request $request){
-        $data = pelanggan::where('tbl_pelanggan.nama_pelanggan','like',"%{$request->keyword}%")->paginate(5)->onEachSide(0);;
+        $data = Pelanggan::where('tbl_pelanggan.nama_pelanggan','like',"%{$request->keyword}%")->paginate(5)->onEachSide(0);;
         return view('admin/pelanggan.index',(['data' => $data]));
     }
 
@@ -21,7 +21,7 @@ class PelangganController extends Controller
         $data = DB::table('tbl_pelanggan');
         $count = $data->count();
         $kode = 'plg'.$count;
-    	pelanggan::create([
+    	Pelanggan::create([
             'kode' => $kode,
             'nama_pelanggan'=>$request->nama_pelanggan,
             'password'=>bcrypt($request->password),

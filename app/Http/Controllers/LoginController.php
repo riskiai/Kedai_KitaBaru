@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\admin;
-use App\kasir;
+use App\Admin;
+use App\Kasir;
 use Auth;
 use Illuminate\Support\Facades\Hash;
 
